@@ -1,6 +1,8 @@
 
 function Message(){
-    return <h1>My Tittle Heading</h1>;
+
+    const person = "Raja";
+    return <h1>Hello {person}</h1>;
 }
 
 export default Message;
