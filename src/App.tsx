@@ -5,18 +5,21 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const pjimage = "https://onlinepj.co.in/wp-content/uploads/2023/03/UNAVUKAL-300x150.jpg?v=1";
 
   return (
     <>
       <div>
         <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+          <img src={pjimage} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+
       <h1>Vite + React</h1>
+
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
