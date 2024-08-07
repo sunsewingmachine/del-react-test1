@@ -1,3 +1,5 @@
+const justWasteConst = "Wate";
+
 function ListGroup() {
   let items = [
     "An item",
