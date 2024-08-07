@@ -1,5 +1,3 @@
-const justWasteConst = "Wate";
-
 function ListGroup() {
   let items = [
     "An item",
@@ -9,25 +7,19 @@ function ListGroup() {
     "And a fifth one",
   ];
 
-  items = [];
-
-  if (items.length === 0) {
-    return (
-      <>
-        <h1>List</h1>
-        <h3>No items</h3>
-      </>
-    );
-  }
-
   return (
     <>
       <h1>List</h1>
-
+      {items.length === 0 ? <h3>No items</h3> : null}
+      {items.length !== 0 && <h3>Some items</h3>}
       <ul className="list-group">
         {items.map((item, index) => {
           return (
-            <li key={index} className="list-group-item">
+            <li
+              key={index}
+              className="list-group-item"
+              onClick={() => console.log(item)}
+            >
               {item}
             </li>
           );
