@@ -1,21 +1,17 @@
 import { useState } from "react";
 
-function ListGroup() {
-  let items = [
-    "An item",
-    "A second item",
-    "A third item",
-    "A fourth item",
-    "And a fifth one",
-  ];
+interface Props {
+  items: string[];
+  heading: string;
+  OnSelectItem: (item: string) => void;
+}
 
-  const AltData = (event: React.MouseEvent<HTMLLIElement>) =>
-    console.log(event.clientY);
+function ListGroup({ items, heading, OnSelectItem }: Props) {
   const [selectedIndex, SetselectedIndex] = useState(1);
 
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {items.length === 0 ? <h3>No items</h3> : null}
       {items.length !== 0 && <h3>Some items</h3>}
       <ul className="list-group">
@@ -28,7 +24,10 @@ function ListGroup() {
                   ? "list-group-item active"
                   : "list-group-item"
               }
-              onClick={() => SetselectedIndex(index)}
+              onClick={() => {
+                OnSelectItem(item);
+                SetselectedIndex(index);
+              }}
             >
               {item}
             </li>
